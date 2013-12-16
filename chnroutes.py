@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 import argparse
 import math
@@ -95,6 +95,14 @@ ip -batch - <<EOF
         upfile.write('route add %s/%s via $OLDGW metric %s\n' %
                      (ip, mask, metric))
         downfile.write('route del %s/%s\n' % (ip, mask))
+
+    upfile.write('route add %s/%s via $OLDGW metric %s\n' %
+                     ('10.0.0.0', 8, metric))
+    downfile.write('route del %s/%s\n' % ('10.0.0.0', 8))
+
+    upfile.write('route add %s/%s via $OLDGW metric %s\n' %
+                     ('172.27.0.0', 16, metric))
+    downfile.write('route del %s/%s\n' % ('172.27.0.0', 16 ))
 
     upfile.write('EOF\n')
     downfile.write('''\
