@@ -101,8 +101,8 @@ ip -batch - <<EOF
     downfile.write('route del %s/%s\n' % ('10.0.0.0', 8))
 
     upfile.write('route add %s/%s via $OLDGW metric %s\n' %
-                     ('172.27.0.0', 16, metric))
-    downfile.write('route del %s/%s\n' % ('172.27.0.0', 16 ))
+                     ('172.16.0.0', 12, metric))
+    downfile.write('route del %s/%s\n' % ('172.16.0.0', 12 ))
 
     upfile.write('EOF\n')
     downfile.write('''\
