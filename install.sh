@@ -21,8 +21,8 @@ read -n1 -r -p "Then press any key to continue..." nothing
 cp $SCRIPTDIR/ip-pre-up /etc/ppp/ip-pre-up
 chmod +x /etc/ppp/ip-pre-up
 
-cp $SCRIPTDIR/ip-down /etc/ppp/ip-down.d/ip-down.sh
-chmod +x /etc/ppp/ip-down.d/ip-down.sh
+cp $SCRIPTDIR/ip-down /etc/ppp/ip-down.d/ip-down
+chmod +x /etc/ppp/ip-down.d/ip-down
 
 echo ""
 echo "Install successfully."
